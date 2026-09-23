@@ -6,32 +6,11 @@
   const track = document.getElementById("track");
   const titleEl = document.getElementById("pageTitle");
   const pages = Array.from(document.querySelectorAll(".page"));
-  const order = ["home", "venue", "rituals", "dress", "people"];
-  const titles = { home: "Shubh Vivah", venue: "Venue", rituals: "Rituals", dress: "Dress Code", people: "Our People" };
+  const order = ["home", "venue", "rituals", "dress", "rsvp"];
+  const titles = { home: "Shubh Vivah", venue: "Venue", rituals: "Rituals", dress: "Dress Code", rsvp: "RSVP" };
 
   let current = 0;
   let navLock = false;
-
-  const peopleData = [
-    { name: "Ramesh & Sunita Rathi", rel: "Bride's Parents", init: "RS" },
-    { name: "Vikram & Kavita Mehta", rel: "Groom's Parents", init: "VM" },
-    { name: "Suresh Rathi", rel: "Grandfather — Bride", init: "SR" },
-    { name: "Pushpa Rathi", rel: "Grandmother — Bride", init: "PR" },
-    { name: "Rohan & Shweta", rel: "Groom's Brother & Sister-in-law", init: "RS" },
-    { name: "Meera & Sameer", rel: "Bride's Sister & Spouse", init: "MS" },
-    { name: "Aditya Rathi", rel: "Cousin & DJ for a Night", init: "AR" },
-    { name: "Priya", rel: "Maid of Honour", init: "P" },
-    { name: "Karan", rel: "Best Man", init: "K" },
-    { name: "The Squad", rel: "College Gang — sangeet backup dancers", init: "!!" },
-  ];
-
-  const grid = document.getElementById("peopleGrid");
-  grid.innerHTML = peopleData.map(p => `
-    <article class="p-card reveal">
-      <span class="p-avatar">${p.init}</span>
-      <span class="p-name">${p.name}</span>
-      <span class="p-rel">${p.rel}</span>
-    </article>`).join("");
 
   const showPage = (key) => {
     const i = order.indexOf(key);
@@ -164,6 +143,31 @@
     saveBtn.setAttribute("aria-pressed", String(saved));
     saveBtn.querySelector("span").textContent = saved ? "Date Saved!" : "Save the Date";
     gsap.fromTo(saveBtn, { scale: 1.14 }, { scale: 1, duration: 0.5, ease: "back.out(2)", overwrite: true });
+  });
+
+  const rsvpForm = document.getElementById("rsvpForm");
+  const rsvpNote = document.getElementById("rsvpNote");
+  const WHATSAPP_NUMBER = "918417950012";
+
+  rsvpForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("rsvpName").value.trim();
+    const attend = document.querySelector('input[name="attend"]:checked').value;
+    const msg = document.getElementById("rsvpMsg").value.trim();
+    if (!name) {
+      document.getElementById("rsvpName").focus();
+      return;
+    }
+    const attendLabel = attend === "yes" ? "Joyfully Accepts" : "Regretfully Declines";
+    const text = encodeURIComponent(
+      `*RSVP - Shweta & Dr. Narendra Wedding*\n\nName: ${name}\nAttendance: ${attendLabel}` +
+      (msg ? `\nMessage: ${msg}` : "")
+    );
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+    rsvpForm.classList.add("is-sent");
+    rsvpNote.hidden = false;
+    rsvpForm.reset();
+    gsap.fromTo(rsvpNote, { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", overwrite: "auto" });
   });
 
   const heroTl = gsap.timeline({ delay: 0.15 });
