@@ -2480,6 +2480,36 @@ a {
 }
 
 /* ---------- home gallery ---------- */
+.gallery-head {
+  text-align: center;
+  max-width: 780px;
+  margin: 34px auto 6px;
+  padding: 0 24px;
+}
+
+.gallery-title {
+  font-family: var(--kharisna);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.1;
+  color: var(--maroon-deep);
+}
+
+.gallery-sub {
+  font-family: var(--serif);
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+@media (max-width: 599px) {
+  .gallery-head {
+    padding: 0 18px;
+  }
+}
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
