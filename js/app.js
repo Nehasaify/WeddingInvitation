@@ -148,6 +148,7 @@
   const rsvpForm = document.getElementById("rsvpForm");
   const rsvpNote = document.getElementById("rsvpNote");
   const WHATSAPP_NUMBER = "918417950012";
+  const SHEETS_URL = "https://script.google.com/macros/s/AKfycbz9xJpwco6SDI4hewVtV4rnkMPACeBkIvAcA5jnZeg2M4H12ohKJh3Mh6vT2EWy2tSpDg/exec";
 
   rsvpForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -164,6 +165,10 @@
       (msg ? `\nMessage: ${msg}` : "")
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+    fetch(SHEETS_URL, {
+      method: "POST",
+      body: JSON.stringify({ name, attend: attendLabel, message: msg }),
+    }).catch(() => {});
     rsvpForm.classList.add("is-sent");
     rsvpNote.hidden = false;
     rsvpForm.reset();
