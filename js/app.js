@@ -265,4 +265,26 @@
     const timer = setInterval(tick, 1000);
     tick();
   }
+
+  document.querySelectorAll(".d-card.pastel-haldi .d-chips i").forEach((sw) => {
+    sw.addEventListener("click", () => {
+      const card = sw.closest(".d-card");
+      const c = sw.style.getPropertyValue("--c").trim();
+      if (card && c) {
+        card.style.background = c;
+        card.style.transition = "background .35s ease";
+      }
+    });
+  });
 })();
+
+document.addEventListener("click", (e) => {
+  const sw = e.target.closest(".d-card.pastel-haldi .d-chips i");
+  if (!sw) return;
+  const card = sw.closest(".d-card");
+  const c = (sw.style.getPropertyValue("--c") || getComputedStyle(sw).getPropertyValue("--c") || "").trim();
+  if (card && c) {
+    card.style.background = c;
+    card.style.transition = "background .35s ease";
+  }
+});

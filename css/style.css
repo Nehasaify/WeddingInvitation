@@ -1492,17 +1492,14 @@ a {
 }
 
 .d-card.pastel-haldi {
-  background: #98A869;
-  /* border-color: #346325; */
-  box-shadow: var(--shadow-sm);
+      background: #a5b27a;
+    /* border-color: #346325; */
+    box-shadow: var(--shadow-sm);
 }
 
 .d-card.pastel-haldi .d-head h4,
-.d-card.pastel-sangeet .d-head h4,
-.d-card.pastel-haldi .d-name,
-.d-card.pastel-haldi .d-desc,
-.d-card.pastel-sangeet .d-desc {
-  color: var(--cream);
+.d-card.pastel-haldi .d-name {
+  color: var(--maroon-deep);
 }
 
 .d-card.gold h4 {
@@ -1511,6 +1508,10 @@ a {
 
 .pastel-sangeet {
   background: #9d6f9c;
+}
+
+.pastel-sangeet .d-head h4 {
+  color: #fff;
 }
 
 .pastel-sangeet .d-name {
@@ -1736,8 +1737,12 @@ a {
 }
 
 .dress-grid .d-chips i {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
+}
+
+.d-card.pastel-haldi .d-chips i {
+  cursor: pointer;
 }
 
 .dress-grid .d-name {
@@ -2727,7 +2732,7 @@ a {
 
 .tl-title {
   font-family: var(--serif);
-  font-size: 36px;
+  font-size: 26px;
   line-height: 1.15;
   color: #b11b59;
 }
@@ -2759,7 +2764,7 @@ a {
 }
 
 .page[data-key="timeline"] .ph-title {
-  font-size: 46px;
+  font-size: 36px;
   line-height: 1.08;
   letter-spacing: .01em;
 }
