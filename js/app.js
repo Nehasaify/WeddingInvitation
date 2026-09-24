@@ -6,8 +6,8 @@
   const track = document.getElementById("track");
   const titleEl = document.getElementById("pageTitle");
   const pages = Array.from(document.querySelectorAll(".page"));
-  const order = ["home", "venue", "rituals", "dress", "rsvp"];
-  const titles = { home: "Shubh Vivah", venue: "Venue", rituals: "Rituals", dress: "Dress Code", rsvp: "RSVP" };
+  const order = ["home", "venue", "rituals", "dress", "timeline", "rsvp"];
+  const titles = { home: "Shubh Vivah", venue: "Venue", rituals: "Rituals", dress: "Dress Code", timeline: "Timeline", rsvp: "RSVP" };
 
   let current = 0;
   let navLock = false;

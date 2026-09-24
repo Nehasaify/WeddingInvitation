@@ -40,10 +40,16 @@
       <circle cx="17" cy="9" r="2.6" />
       <path d="M15.5 14.7a4.6 4.6 0 0 1 5 4.8" />
     </symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24">
-      <rect x="3" y="5" width="18" height="14" rx="2.5" />
-      <path d="M3.5 7l8.5 6 8.5-6" />
-    </symbol>
+<symbol id="i-mail" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+    <path d="M3.5 7l8.5 6 8.5-6"/>
+  </symbol>
+  <symbol id="i-timeline" viewBox="0 0 24 24">
+    <circle cx="5" cy="5" r="2"/>
+    <circle cx="5" cy="12" r="2"/>
+    <circle cx="5" cy="19" r="2"/>
+    <path d="M10 5h8M10 12h8M10 19h8"/>
+  </symbol>
     <symbol id="i-burg" viewBox="0 0 24 24">
       <path d="M4 7h16M4 12h16M4 17h16" />
     </symbol>
@@ -138,6 +144,9 @@
         <button class="drawer-link" data-nav="dress"><svg class="ic">
             <use href="#i-hanger" />
           </svg>Dress Code</button>
+        <button class="drawer-link" data-nav="timeline"><svg class="ic">
+            <use href="#i-timeline" />
+          </svg>Timeline</button>
         <button class="drawer-link" data-nav="rsvp"><svg class="ic">
             <use href="#i-mail" />
           </svg>RSVP</button>
@@ -161,6 +170,7 @@
           <p class="mh-sub">INVITE YOU TO CELEBRATE AT THEIR WEDDING</p>
         </header> -->
           <div class="inv-inner">
+            <img class="ganesha-img" src="images/Ganesha.png" alt="Ganesha">
             <p class="kicker inv-families">WITH THE BLESSINGS OF MAA VINDHYAVASINI</p>
             <h2 class="couple"> Shweta <span class="amp-script">&amp;</span> Dr. Narendra</h2>
 
@@ -383,11 +393,11 @@
                   <img src="images/3.jpeg" alt="Memory 3">
                 </figure>
                 <figure class="g-item">
-                  <img src="images/4.jpeg" alt="Memory 4">
+                  <img src="images/5.JPG" alt="Memory 4">
                 </figure>
               </div>
               <div class="inv-inner">
-                <p class="kicker inv-families">Mrs Asha Rajendra Agrahari & The Whole family</p>
+                <p class="kicker inv-families bigger">Mrs Asha Rajendra Agrahari & The Whole family</p>
               </div>
               <button class="scroll-cue" data-nav="venue" aria-label="Explore the venue">
                 <span>Swipe to explore</span>
@@ -563,9 +573,6 @@
                 <div class="d-head">
                   <h4>Sangeet</h4>
                 </div>
-                <span class="d-chips glitter-chips">
-                  <i style="--c:#e0b45f"></i><i style="--c:#f7e2a8"></i><i style="--c:#7b1e2b"></i>
-                </span>
                 <p class="d-name">Shimmer & Glitter</p>
                 <!-- <p class="d-desc">Sparkle and shimmer allowed — sequins, mirror work, lehengas that catch the light.</p> -->
                 <!-- <p class="d-fit">Lehenga · Gown · Bandhgala</p> -->
@@ -573,9 +580,6 @@
               <article class="d-card reveal gold" data-k="3">
                 <div class="d-head">
                   <h4>Wedding</h4>
-                  <span class="d-chips">
-                    <i style="--c:#7b1e2b"></i><i style="--c:#5c1420"></i><i style="--c:#c9a24b"></i>
-                  </span>
                 </div>
                 <p class="d-name">Elegant Traditional Attire</p>
                 <!-- <p class="d-desc">Go grand — rich maroons, silks and heirloom jewellery for the pheras.</p> -->
@@ -603,7 +607,39 @@
           </div>
         </section>
 
-        <section class="page" data-key="rsvp">
+        <section class="page" data-key="timeline">
+        <div class="page-inner">
+          <header class="phead">
+            <p class="ph-eyebrow">The Big Day</p>
+            <h2 class="ph-title">Wedding day Timeline</h2>
+            <svg class="divider"><use href="#divider"/></svg>
+            <p class="ph-sub">A celebration built on love — here's how the day unfolds.</p>
+          </header>
+
+          <div class="timeline">
+            <article class="tl-item reveal">
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="tl-date">05/12/2026 · 2:30 PM</div>
+              <h4 class="tl-title">Baraat Welcome &amp; Dwarchar</h4>
+              <p class="tl-desc">Join us to welcome the Damad Ji and Family.</p>
+            </article>
+            <article class="tl-item reveal">
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="tl-date">05/12/2026 · 4:00 PM</div>
+              <h4 class="tl-title">Varmala</h4>
+              <p class="tl-desc">When two souls will exchange the garland to inaugurate the Auspicious ceremony.</p>
+            </article>
+            <article class="tl-item reveal highlight">
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="tl-date">05/12/2026 · 7:00 PM</div>
+              <h4 class="tl-title">Saat Phere &amp; Saat Vachan</h4>
+              <p class="tl-desc">The seven vows to make the pair eternal. All the devkul will be witnessing this with you.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" data-key="rsvp">
           <div class="page-inner">
             <header class="phead">
               <p class="ph-eyebrow">Kindly Respond</p>
@@ -678,6 +714,12 @@
             <use href="#i-hanger" />
           </svg></span>
         <span class="tab-label">Dress</span>
+      </button>
+      <button class="tab" data-nav="timeline">
+        <span class="tab-ic"><svg class="ic">
+            <use href="#i-timeline" />
+          </svg></span>
+        <span class="tab-label">Timeline</span>
       </button>
       <button class="tab" data-nav="rsvp">
         <span class="tab-ic"><svg class="ic">
