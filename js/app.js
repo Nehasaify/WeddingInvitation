@@ -147,7 +147,7 @@
 
   const rsvpForm = document.getElementById("rsvpForm");
   const rsvpNote = document.getElementById("rsvpNote");
-  const WHATSAPP_NUMBER = "918417950012";
+  const WHATSAPP_NUMBER = "919793526992";
   const SHEETS_URL = "https://script.google.com/macros/s/AKfycbz9xJpwco6SDI4hewVtV4rnkMPACeBkIvAcA5jnZeg2M4H12ohKJh3Mh6vT2EWy2tSpDg/exec";
 
   rsvpForm.addEventListener("submit", (e) => {
