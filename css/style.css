@@ -1492,14 +1492,17 @@ a {
 }
 
 .d-card.pastel-haldi {
-      background: #a5b27a;
+      background: #9d6f9c;
     /* border-color: #346325; */
     box-shadow: var(--shadow-sm);
 }
 
-.d-card.pastel-haldi .d-head h4,
+.d-card.pastel-haldi .d-head h4 {
+  color: #fff;
+}
+
 .d-card.pastel-haldi .d-name {
-  color: var(--maroon-deep);
+  color: #3e0632;
 }
 
 .d-card.gold h4 {
@@ -1507,15 +1510,12 @@ a {
 }
 
 .pastel-sangeet {
-  background: #9d6f9c;
+  background: #a5b27a;
 }
 
-.pastel-sangeet .d-head h4 {
-  color: #fff;
-}
-
+.pastel-sangeet .d-head h4,
 .pastel-sangeet .d-name {
-  color: #3e0632;
+  color: var(--maroon-deep);
 }
 
 .glitter-shimmer {
