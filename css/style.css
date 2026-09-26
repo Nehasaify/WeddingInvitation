@@ -2819,28 +2819,6 @@ a {
   transform: scale(-1);
 }
 
-.pl-head {
-  text-align: center;
-  margin: 0 0 10px;
-}
-
-.pl-head-kicker {
-  font-size: 10.5px;
-  letter-spacing: .34em;
-  text-transform: uppercase;
-  color: #a2834a;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.pl-title {
-  font-family: var(--script), cursive;
-  font-size: 46px;
-  line-height: 1.1;
-  color: #cf7f9c;
-  font-weight: 400;
-}
-
 .pl-row {
   display: grid;
   grid-template-columns: 88px 1fr;
@@ -2870,12 +2848,12 @@ a {
 }
 
 .pl-couple {
-  width: 82px;
-  height: 82px;
+  width: 118px;
+  height: 118px;
   display: block;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(151, 106, 38, .18);
+  /* box-shadow: 0 2px 8px rgba(151, 106, 38, .18); */
 }
 
 .pl-date {
