@@ -2843,7 +2843,7 @@ a {
 .pl-row {
   display: grid;
   grid-template-columns: 88px 1fr;
-  gap: 12px;
+  gap: 48px;
   align-items: center;
   padding: 14px 2px;
 }
