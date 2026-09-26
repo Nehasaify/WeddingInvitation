@@ -267,6 +267,33 @@ a {
   display: block
 }
 
+.music-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--cream);
+  transition: transform .2s ease;
+  margin-right: 4px;
+}
+
+.music-btn .ic {
+  stroke: #fff;
+}
+
+.music-btn:active {
+  transform: scale(.9)
+}
+
+.music-btn.is-off {
+  color: rgba(255, 255, 255, .45);
+}
+
+.music-btn.is-off .ic {
+  stroke: rgba(255, 255, 255, .55);
+}
+
 /* ---------- scrim / drawer ---------- */
 .scrim {
   position: fixed;

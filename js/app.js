@@ -192,9 +192,25 @@
     .from(".scroll-cue", { opacity: 0, y: 10, duration: 0.5 }, "-=0.25");
 
   const splash = document.getElementById("splash");
+  const music = document.getElementById("bgMusic");
+  const musicBtn = document.getElementById("musicBtn");
+
+  const startMusic = () => {
+    if (music && musicBtn && musicBtn.dataset.broken !== "1") {
+      music.volume = 0.5;
+      music.play().then(() => {
+        musicBtn.classList.remove("is-off");
+      }).catch(() => {
+        musicBtn.classList.add("is-off");
+        musicBtn.dataset.broken = "1";
+      });
+    }
+  };
+
   splash.addEventListener("click", () => {
     splash.classList.add("done");
     heroTl.play();
+    startMusic();
     gsap.to(splash, {
       opacity: 0,
       scale: 1.06,
@@ -203,6 +219,18 @@
       onComplete: () => splash.remove(),
     });
   });
+
+  if (musicBtn) {
+    musicBtn.addEventListener("click", () => {
+      if (!music) return;
+      if (music.paused) {
+        startMusic();
+      } else {
+        music.pause();
+        musicBtn.classList.add("is-off");
+      }
+    });
+  }
 
   document.querySelectorAll(".petal-float i").forEach((el, i) => {
     gsap.fromTo(el,
