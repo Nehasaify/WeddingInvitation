@@ -9,7 +9,7 @@
   const order = ["home", "venue", "rituals", "dress", "timeline", "rsvp"];
   const titles = { home: "Shubh Vivah", venue: "Venue", rituals: "Rituals", dress: "Dress Code", timeline: "Timeline", rsvp: "RSVP" };
 
-  let current = 0;
+  let current = 0;  
   let navLock = false;
 
   const showPage = (key) => {
