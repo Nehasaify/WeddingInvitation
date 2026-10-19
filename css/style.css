@@ -407,7 +407,7 @@ a {
   height: var(--tabbar);
   height: calc(var(--tabbar) + env(safe-area-inset-bottom));
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   background: linear-gradient(180deg, var(--cream-card) 0%, #f5e6c2 100%);
   border-top: 1.5px solid var(--line-gold);
   box-shadow: 0 -6px 24px rgba(92, 20, 32, .12);
